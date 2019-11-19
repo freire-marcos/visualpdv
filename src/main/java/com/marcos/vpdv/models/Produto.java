@@ -58,7 +58,7 @@ public class Produto extends BaseEntity implements Serializable {
 	@NotNull @NotEmpty
 	private Calendar dataCompra;
 	
-	@OneToMany
+	@ManyToOne
 	@Column(name = "fornecedor", nullable = false)
 	@NotNull @NotEmpty
 	private List<Fornecedor> fornecedor;
