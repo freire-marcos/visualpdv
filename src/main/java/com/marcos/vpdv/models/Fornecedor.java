@@ -1,16 +1,24 @@
 package com.marcos.vpdv.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-public class Fornecedor {
+import com.marcos.vpdv.base.models.BaseEntity;
+
+@Entity
+@Table(name = "fornecedor")
+public class Fornecedor extends BaseEntity implements Serializable {
 
 	@Column(name = "nome_fantasia", nullable = false)
 	@NotNull @NotEmpty
