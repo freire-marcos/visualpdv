@@ -11,6 +11,12 @@ public class Endereco implements Serializable {
 	@Column(name = "endereco")
 	private String endereco;
 	
+	@Column(name = "numero")
+	private int numero;
+	
+	@Column(name = "complemento")
+	private String complemento;
+	
 	@Column(name = "bairro")
 	private String bairro;
 	
@@ -30,6 +36,22 @@ public class Endereco implements Serializable {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
 	}
 
 	public String getBairro() {
