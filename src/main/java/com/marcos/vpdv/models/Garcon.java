@@ -7,22 +7,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 @Entity
 @Table(name = "garcon")
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class Garcon extends Funcionario implements Serializable {
 
 	@Column(name = "adicional")
 	private BigDecimal adicional;
 	
-	
-
-	public BigDecimal getAdicional() {
-		return adicional;
-	}
-
-	public void setAdicional(BigDecimal adicional) {
-		this.adicional = adicional;
-	}
-	
-	
+		
 }

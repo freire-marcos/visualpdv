@@ -8,34 +8,19 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
 
+import lombok.Data;
+
 @MappedSuperclass
+@Data
 public class BaseEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	protected Long id;
 	
 	@Transient
-	private boolean selecionado;
+	protected boolean selecionado;
 
-	
-	
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public boolean isSelecionado() {
-		return selecionado;
-	}
-
-	public void setSelecionado(boolean selecionado) {
-		this.selecionado = selecionado;
-	}
 	
 	
 }

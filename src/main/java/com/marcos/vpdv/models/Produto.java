@@ -19,8 +19,11 @@ import javax.validation.constraints.NotNull;
 
 import com.marcos.vpdv.base.models.BaseEntity;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "produto")
+@Data
 public class Produto extends BaseEntity implements Serializable {
 
 	
@@ -62,79 +65,6 @@ public class Produto extends BaseEntity implements Serializable {
 	@JoinColumn(name = "fornecedor_id", nullable = false)
 	private Fornecedor fornecedor;
 	
-	
-
-	public String getNomeProduto() {
-		return nomeProduto;
-	}
-
-	public void setNomeProduto(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
-	}
-
-	public String getCodProduto() {
-		return codProduto;
-	}
-
-	public void setCodProduto(String codProduto) {
-		this.codProduto = codProduto;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
-	public SubCategoria getSubCategoria() {
-		return subCategoria;
-	}
-
-	public void setSubCategoria(SubCategoria subCategoria) {
-		this.subCategoria = subCategoria;
-	}
-
-	public BigDecimal getValorVenda() {
-		return valorVenda;
-	}
-
-	public void setValorVenda(BigDecimal valorVenda) {
-		this.valorVenda = valorVenda;
-	}
-
-	public BigDecimal getValorCompra() {
-		return valorCompra;
-	}
-
-	public void setValorCompra(BigDecimal valorCompra) {
-		this.valorCompra = valorCompra;
-	}
-
-	public Calendar getDataValidade() {
-		return dataValidade;
-	}
-
-	public void setDataValidade(Calendar dataValidade) {
-		this.dataValidade = dataValidade;
-	}
-
-	public Calendar getDataCompra() {
-		return dataCompra;
-	}
-
-	public void setDataCompra(Calendar dataCompra) {
-		this.dataCompra = dataCompra;
-	}
-
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
 	
 	
 }

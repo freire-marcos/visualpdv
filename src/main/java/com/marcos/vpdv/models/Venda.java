@@ -18,8 +18,11 @@ import javax.validation.constraints.NotNull;
 
 import com.marcos.vpdv.base.models.BaseEntity;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "venda")
+@Data
 public class Venda extends BaseEntity implements Serializable {
 
 
@@ -44,7 +47,6 @@ public class Venda extends BaseEntity implements Serializable {
 	@Column(name = "valor_conta")
 	private BigDecimal valorConta;
 	
-	
-	
+		
 	
 }
