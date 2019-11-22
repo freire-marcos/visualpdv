@@ -65,7 +65,12 @@ public class Produto extends BaseEntity implements Serializable {
 	@JoinColumn(name = "fornecedor_id", nullable = false)
 	private Fornecedor fornecedor;
 	
-	
+	// subtrai o valor de compra, do valor de venda. retornando uma margem aproximada de lucro
+	public BigDecimal margemLucro() {
+		
+		BigDecimal margem = this.valorVenda.subtract(valorCompra);
+		return margem;
+	}
 	
 }
 
