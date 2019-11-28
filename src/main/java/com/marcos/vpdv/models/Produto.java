@@ -44,22 +44,20 @@ public class Produto extends BaseEntity implements Serializable {
 	private SubCategoria subCategoria;
 	
 	@Column(name = "valor_venda", nullable = false)
-	@NotNull @NotEmpty
+	@NotNull
 	private BigDecimal valorVenda;
 	
 	@Column(name = "valor_compra", nullable = false)
-	@NotNull @NotEmpty
+	@NotNull
 	private BigDecimal valorCompra;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(name = "data_validade", nullable = false)
 	@NotNull @NotEmpty
-	private Calendar dataValidade;
+	private String dataValidade;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(name = "data_compra", nullable = false)
 	@NotNull @NotEmpty
-	private Calendar dataCompra;
+	private String dataCompra;
 	
 	@ManyToOne
 	@JoinColumn(name = "fornecedor_id", nullable = false)
@@ -71,6 +69,26 @@ public class Produto extends BaseEntity implements Serializable {
 		BigDecimal margem = this.valorVenda.subtract(valorCompra);
 		return margem;
 	}
+
+	public Produto() {
+		
+	}
+
+	public Produto(@NotNull @NotEmpty String nomeProduto, @NotNull @NotEmpty String codProduto, Categoria categoria,
+			SubCategoria subCategoria, @NotNull BigDecimal valorVenda, @NotNull BigDecimal valorCompra,
+			@NotNull @NotEmpty String dataValidade, @NotNull @NotEmpty String dataCompra, Fornecedor fornecedor) {
+		super();
+		this.nomeProduto = nomeProduto;
+		this.codProduto = codProduto;
+		this.categoria = categoria;
+		this.subCategoria = subCategoria;
+		this.valorVenda = valorVenda;
+		this.valorCompra = valorCompra;
+		this.dataValidade = dataValidade;
+		this.dataCompra = dataCompra;
+		this.fornecedor = fornecedor;
+	}
+	
 	
 }
 

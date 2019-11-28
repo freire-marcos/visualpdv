@@ -14,9 +14,12 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.marcos.vpdv.base.models.BaseEntity;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.Value;
 
 @Entity
 @Table(name = "fornecedor")
