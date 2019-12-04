@@ -18,6 +18,10 @@ import lombok.Value;
 @Data
 public class Categoria extends BaseEntity implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4935407704340382995L;
 	@Column(name = "descricao")
 	private String descricao;
 	

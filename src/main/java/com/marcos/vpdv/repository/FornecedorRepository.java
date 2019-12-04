@@ -10,6 +10,6 @@ import com.marcos.vpdv.models.SubCategoria;
 public interface FornecedorRepository extends JpaRepository<Fornecedor, Long>{
 
 
-	Fornecedor findById(Id fornecedorId);
+	Fornecedor findById(int fornecedorId);
 
 }

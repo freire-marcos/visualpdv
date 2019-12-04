@@ -26,6 +26,11 @@ import lombok.Value;
 @Data
 public class Fornecedor extends BaseEntity implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -85737938173984935L;
+
 	@Column(name = "nome_fantasia", nullable = false)
 	@NotNull @NotEmpty
 	private String nomeFantasia;

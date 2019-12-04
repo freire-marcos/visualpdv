@@ -14,9 +14,14 @@ import lombok.Data;
 @Data
 public class BaseEntity implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 262527966834030030L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	protected Long id;
+	protected int id;
 	
 	@Transient
 	protected boolean selecionado;

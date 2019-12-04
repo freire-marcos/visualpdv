@@ -18,6 +18,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class Funcionario extends Pessoa implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4495280603151150844L;
+
 	@Column(name = "turno", nullable = false)
 	@NotNull @NotEmpty
 	protected String turno;

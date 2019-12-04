@@ -21,6 +21,11 @@ import lombok.Value;
 @Data
 public class SubCategoria extends BaseEntity implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1614879874815326837L;
+
 	@Column(name = "descricao", nullable = false)
 	private String descricao;
 	

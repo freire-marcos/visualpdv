@@ -11,6 +11,11 @@ import lombok.Data;
 @Data
 public class Endereco implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5298841651818500023L;
+
 	@Column(name = "endereco")
 	private String endereco;
 	

@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class ProdutoDto {
 
-	private Long id;
+	private int id;
 	private String nomeProduto;
 	private BigDecimal valorCompra;
 	private BigDecimal valorVenda;
