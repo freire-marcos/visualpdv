@@ -42,11 +42,11 @@ public class ProdutoController {
 		return ResponseEntity.ok().build();
 	}
 	
-	@GetMapping("{/id}")
-	public ResponseEntity<Produto> detalharProduto(@PathVariable Long id){
+	@GetMapping("/{id}")
+	public ResponseEntity<Produto> detalharProduto(@PathVariable int id){
 		Optional<Produto> produto = produtoRepository.findById(id);
 		if(produto.isPresent()) {
-			return ResponseEntity.ok(new Produto());
+			return ResponseEntity.ok(produto.get());
 		}
 		return ResponseEntity.notFound().build();
 	}
