@@ -3,11 +3,13 @@ package com.marcos.vpdv.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,7 +53,7 @@ public class ProdutoController {
 	
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<DetalhesProdutoDto> detalhar(@PathVariable int id) {
+	public ResponseEntity<DetalhesProdutoDto> detalhar(@PathVariable Long id) {
 		Optional<Produto> produto = produtoRepository.findById(id);
 		if(produto.isPresent()) {
 			return ResponseEntity.ok(new DetalhesProdutoDto(produto.get()));
@@ -60,14 +62,19 @@ public class ProdutoController {
 		
 	}
 	
-	// vou ter um trabalho do inferno, pq, por preguiça, decidi usar int no lugar de long nos meus ids
-	// agora o método getOne(), que só funciona com long, não pode ser implementado.
-	// preguiçoso fdp
 	@PutMapping("/{id}")
 	@Transactional
-	public ResponseEntity<ProdutoDto> atualizar(@PathVariable int id, @RequestBody @Valid AtualizacaoProdutoForm form){
+	public ResponseEntity<DetalhesProdutoDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoProdutoForm form){
 		Produto produto = form.atualizar(id, produtoRepository);
-		return ResponseEntity.ok(new ProdutoDto(produto));
+		return ResponseEntity.ok(new DetalhesProdutoDto(produto));
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> delete(@PathVariable Long id){
+		
+		produtoRepository.deleteById(id);
+		
+		return ResponseEntity.ok().build();
 	}
 	
 }

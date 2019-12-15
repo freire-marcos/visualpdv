@@ -21,7 +21,7 @@ public class BaseEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	protected int id;
+	protected Long id;
 	
 	@Transient
 	protected boolean selecionado;

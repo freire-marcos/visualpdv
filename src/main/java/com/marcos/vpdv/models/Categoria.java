@@ -11,11 +11,13 @@ import com.marcos.vpdv.base.models.BaseEntity;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 @Entity
 @Table(name = "categoria")
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class Categoria extends BaseEntity implements Serializable {
 
 	/**
